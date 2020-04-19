@@ -71,6 +71,11 @@ public class Register extends AppCompatActivity {
 
                 Toast.makeText(Register.this,"Password not maching",Toast.LENGTH_LONG).show();
             }
+            else if(fName.isEmpty() || lName.isEmpty() || phone.isEmpty() || email.isEmpty() || pass.isEmpty() || confpass.isEmpty()){
+
+                Toast.makeText(Register.this,"Register error. Register again.",Toast.LENGTH_LONG).show();
+
+            }
             else{
                 String sql = "insert into user (fName,lName,phone,email,pass,confpass)values(?,?,?,?,?,?)";
                 SQLiteStatement statement = db.compileStatement(sql);
